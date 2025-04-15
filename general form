@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ambulance request</title>
+    <style>
+        .main{
+            background-color:aquamarine;
+            align-content: center;
+            width: 600px;
+            height: 600px;
+            text-align:start;
+            border:3px solid black;
+            padding: 10px;            
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>HealthChoice</h1>A
+    <h3>AMBULANCE REQUEST</h3>
+    <h6>This form must be completed and accompanied all request.Incomplete form will not be reviewed. </h6>
+    </center>
+    <center>
+    <div class="main">
+        <br>
+        <label for="date">Date</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="billing provider">Billing provider</label>
+        <input type="text" id="bill" name="billing provider">
+        <br> <br>
+
+        <label for="billing address">Billing address</label>
+        <input type="text" id="bill" name="billing address">
+        <br><br>
+        
+        <label for="TIN">TIN</label>
+        <input type="text" id="tin" name="tin">
+        <br><br>
+
+        <label for="mem id">Member ID</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="phone">Phone</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="patient">Patient</label>
+        <input type="text" id="aa" name="abc">
+        <br><br>
+
+        <label for="member">Member</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="transport origination">Transport origination</label>
+        <input type="text" id="aa" name="abc"> <br><br>
+
+        <label for="transport destination">Transport destination</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="date of service">Date of service</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="hcpcs code(s) to be billed: ">hcpcs code(s) to be billed</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="cpt code(s) to be billed:">cpt code(s) to be billed</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <label for="ifa">Indication for ambulance transfer</label>
+        <input type="text" id="aa" name="abc"><br><br>
+
+        <input type="submit">   
+
+    </div>
+    </center>
+</body>
+</html>
