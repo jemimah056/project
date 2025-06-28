@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chess game</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .chessboard {
+            display: grid;
+            grid-template-columns: repeat(8,60px);
+            grid-template-rows: repeat(8,60px);
+            border: 3px solid #333;
+        }
+        .square {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .light {
+            background-color: antiquewhite;
+        }
+        .dark {
+            background-color: black;
+        }
+        .selected {
+            outline: 3px solid red;
+        } 
+    </style>
+</head>
+<body>
+    <div class="chessboard" id="board"></div>
+    <script>
+        const board =document.getElementById("board");
+        const initialBoard =[
+            ["⏺","⏺","⏺","⏺","⏺","⏺","⏺","⏺"],
+            ["*","*","*","*","*","*","*","*"],
+            ["","","","","","","",""],
+            ["","","","","","","",""],
+            ["","","","","","","",""],
+            ["","","","","","","",""],
+            ["*","*","*","*","*","*","*","*"],
+            ["⏺","⏺","⏺","⏺","⏺","⏺","⏺","⏺"]
+            
+        ];
+
+        let selectedSquare = null;
+
+        function  drawBoard() {
+            board.innerHTML ="";
+            for (let row=0; row<8; row++) {
+                for (let col=0; col<8; col++){
+                    const square = document.createElement("div");
+            square.classList.add("square");
+                    square.classList.add((row+col) %2===0 ? "light" : "dark");
+                    square.textContent =initialBoard[row][col];
+                    square.dataset.row = row;
+                    square.dataset.col = col;
+                    square.addEventListener("click",() => handleSquareClick(row.col,square));
+                    board.appendChild(square);
+                }
+            }
+        }
+
+        function handleSquareClick(row,col,square) {
+            if (selectedSquare) {
+                const fromRow = selectedSquare.dataset.row;
+                const fromCol = selectedSquare.dataset.col;
+                const piece = initialBoard[fromRow][fromCol] ="";
+                if (piece){
+                    initialBoard[row][col]=piece;
+                    initialBoard[fromRow][fromCol]="";
+                }
+                selectedSquare.classList.remove("selected");
+                selectedSquare =null;
+                drawBoard();
+            }else if (initialBoard[row][col]!==""){
+                selectedSquare =square;
+                square.classList.add("selected");
+            }
+        }
+        drawBoard()
+    </script>
+</body>
+</html>
